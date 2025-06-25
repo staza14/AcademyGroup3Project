@@ -1,6 +1,0 @@
-package testdata
-
-object PlaceHolder {
-
-
-}

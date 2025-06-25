@@ -1,5 +1,0 @@
-package pages
-
-trait PlaceHolder {
-
-}
