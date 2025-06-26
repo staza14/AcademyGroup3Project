@@ -4,7 +4,7 @@ Feature: Unsuccessful Swag Login
     Given I am on the login page
 
   Scenario Outline: Unsuccessful Login
-    Given I have entered an incorrect <username> and correct password
+    Given I have entered an incorrect "<username>" and correct password
     When  I click on Login
     Then  An error message is displayed
     And I remain on the login page

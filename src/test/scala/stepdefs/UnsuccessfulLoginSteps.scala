@@ -9,7 +9,7 @@ import testdata.SuccessfulLoginData.passwordText
 import testdata.UnsuccessfulLoginData.expectedErrorMessage
 
 class UnsuccessfulLoginSteps extends ScalaDsl with EN {
-  Given("""I have entered an incorrect (.*) and correct password""") { (username: String) =>
+  Given("""I have entered an incorrect {string} and correct password""") { (username: String) =>
     // at the moment this looks at the examples table I think instead of the test data file
     // is that ok?
     inputText(usernameLocator, username)
