@@ -13,4 +13,5 @@ object RemoveFromCartLocators {
   val cartLinkLocator: By = By.className("shopping_cart_link")
   val navMenuLocator: By = By.id("react-burger-menu-btn")
   val allItemsLinkLocator: By = By.id("inventory_sidebar_link")
+  val cartItemsLocator: By = By.className("cart_item")
 }

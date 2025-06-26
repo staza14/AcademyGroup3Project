@@ -1,7 +1,7 @@
 package stepdefs
 
 import io.cucumber.scala.{EN, ScalaDsl}
-import locators.RemoveFromCartLocators.{allItemsLinkLocator, backpackButtonLocator, cartLinkLocator, navMenuLocator, removeFromCartButtonsLocator}
+import locators.RemoveFromCartLocators.{allItemsLinkLocator, backpackButtonLocator, cartItemsLocator, cartLinkLocator, navMenuLocator, removeFromCartButtonsLocator}
 import pages.AddToCartPage.{clickOn, clickOnMultiple, elementIsPresent, getText, waitUntilClickable}
 
 class RemoveFromCartSteps extends ScalaDsl with EN {
@@ -12,7 +12,7 @@ class RemoveFromCartSteps extends ScalaDsl with EN {
     // go to cart
     clickOn(cartLinkLocator)
     // check that the backpack is not there
-    !elementIsPresent(backpackButtonLocator)
+    assert(!elementIsPresent(backpackButtonLocator))
 //    println("Great, the backpack has been removed from cart.")
   }
   And("""on the product inventory page the button now says 'add to cart'""") { () =>
@@ -23,13 +23,16 @@ class RemoveFromCartSteps extends ScalaDsl with EN {
     waitUntilClickable(allItemsLinkLocator).click()
     // println("clicked allItems")
     // check that button text has changed
-   assert(getText(backpackButtonLocator) == "add to cart")
+    assert(getText(backpackButtonLocator) == "Add to cart")
   }
   Given("""I navigate to the cart page""") { () =>
     // more to cart by clicking button
+    clickOn(cartLinkLocator)
   }
   Then("""the cart should be empty""") { () =>
     // check cart is empty
+    assert(!elementIsPresent(cartItemsLocator))
+//    println("Cart is indeed empty!")
   }
   And("""the cart icon should not display a number""") { () =>
     // check that there is no number icon
