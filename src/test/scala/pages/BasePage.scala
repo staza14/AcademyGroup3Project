@@ -1,9 +1,12 @@
 package pages
 
-import org.openqa.selenium.support.ui.Select
-import org.openqa.selenium.{By, JavascriptExecutor, WebDriver}
+import org.openqa.selenium.support.ui.{ExpectedConditions, Select, WebDriverWait}
+import org.openqa.selenium.{By, JavascriptExecutor, WebDriver, WebElement}
 import support.DriverManager
 import utils.ConfigReader
+
+import java.time.Duration
+import scala.jdk.CollectionConverters.CollectionHasAsScala
 
 trait BasePage {
   def driver: WebDriver = DriverManager.driver
@@ -50,4 +53,13 @@ trait BasePage {
     element.isDisplayed
   }
 
+  // findElements does not throw an error if it doesn't find any elements it returns an empty list.
+  def elementIsPresent(selector: By): Boolean = {
+    driver.findElements(selector).asScala.nonEmpty
+  }
+
+  def waitUntilClickable(selector: By): WebElement = {
+    val wait = new WebDriverWait(driver, Duration.ofSeconds(5))
+    wait.until(ExpectedConditions.elementToBeClickable(selector))
+  }
 }
