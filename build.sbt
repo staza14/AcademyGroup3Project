@@ -12,6 +12,8 @@ libraryDependencies ++= Seq(
   "org.scalatest" %% "scalatest" % "3.2.19" % Test,           // Latest stable
   "junit" % "junit" % "4.13.2" % Test,                        // Still widely used
   "commons-io" % "commons-io" % "2.19.0",                      // Latest stable
-  "com.novocode" % "junit-interface" % "0.11"   % Test   // ← required for sbt
+  "com.novocode" % "junit-interface" % "0.11"   % Test, // ← required for sbt
+  "net.bytebuddy" % "byte-buddy" % "1.17.6",
+  "net.java.dev.jna" % "jna" % "5.17.0"
 )
 
