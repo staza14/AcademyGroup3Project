@@ -13,7 +13,7 @@ class Hooks extends ScalaDsl with EN {
 
   //
   val options = new ChromeOptions()
-  options.addArguments("--headless=new") // stops chrome opening
+  //options.addArguments("--headless=new") // stops chrome opening
   options.addArguments("--guest") // stops password pop up
   def userScreenshotDir: String = Paths.get(System.getProperty("user.home"), "Documents", "Screenshots").toString
   def handleScenarioFailure(scenario: Scenario): Unit = {
