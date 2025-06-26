@@ -1,6 +1,7 @@
 package stepdefs
 
 import io.cucumber.scala.{EN, ScalaDsl}
+import locators.AddToCartLocators.cartNumberIconLocator
 import locators.RemoveFromCartLocators.{allItemsLinkLocator, backpackButtonLocator, cartItemsLocator, cartLinkLocator, navMenuLocator, removeFromCartButtonsLocator}
 import pages.AddToCartPage.{clickOn, clickOnMultiple, elementIsPresent, getText, waitUntilClickable}
 
@@ -32,9 +33,11 @@ class RemoveFromCartSteps extends ScalaDsl with EN {
   Then("""the cart should be empty""") { () =>
     // check cart is empty
     assert(!elementIsPresent(cartItemsLocator))
-//    println("Cart is indeed empty!")
+    //println("Cart is indeed empty!")
   }
   And("""the cart icon should not display a number""") { () =>
     // check that there is no number icon
+    assert(!elementIsPresent(cartNumberIconLocator))
+    // println("There is no cart icon present, cart is empty!")
   }
 }
