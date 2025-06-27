@@ -18,13 +18,13 @@ Feature: View Cart Contents
     Then I am taken to the product listings page.
 
   Scenario: Add 1 product to cart and navigate to cart
-    Given I add 1 products to the cart
+    Given I add 1 items to the cart
     And I click on the cart icon
     And I am taken to the cart page
     Then I see the same products in my cart
 
   Scenario: Add 6 products to cart and navigate to cart
-    Given I add 6 products to the cart
+    Given I add 6 items to the cart
     And I click on the cart icon
     And I am taken to the cart page
     Then I see the same products in my cart
