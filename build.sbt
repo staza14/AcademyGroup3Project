@@ -12,8 +12,7 @@ libraryDependencies ++= Seq(
   "junit" % "junit" % "4.13.2" % Test,                        // Still widely used
   "commons-io" % "commons-io" % "2.19.0",                      // Latest stable
   "com.novocode" % "junit-interface" % "0.11"   % Test ,
-  "net.java.dev.jna" % "jna" % "5.14.0" % Test,
-  "net.java.dev.jna" % "jna-platform" % "5.14.0" % Test,        // ← required for sbt
+
 )
 
 
