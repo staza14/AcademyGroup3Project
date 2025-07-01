@@ -10,20 +10,19 @@ Feature: Swag Login
 
   Scenario: Login fails with empty username and password
     When I click on Login
-    Then I should see a "x" icon next to the username field
-    And I should see a "x" icon next to the password field
+    Then I should see a "x" icon next to the username and password fields
     And I should see an error message "Username is required"
 
   Scenario: Login fails with username only
     When I enter a username but leave the password blank
     And I click on Login
-    Then I should see a "x" icon next to the password field
+    Then I should see a "x" icon next to the username and password fields
     And I should see an error message "Password is required"
 
   Scenario: Login fails with password only
     When I enter a password but leave the username blank
     And I click on Login
-    Then I should see a "x" icon next to the username field
+    Then I should see a "x" icon next to the username and password fields
     And I should see an error message "Username is required"
 
   Scenario: Session is maintained after login

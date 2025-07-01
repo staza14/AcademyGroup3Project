@@ -1,8 +1,8 @@
 package stepdefs
 
 import io.cucumber.scala.{EN, ScalaDsl}
-import locators.SuccessfulLoginLocators.{loginButtonLocator, passwordLocator, usernameLocator}
-import pages.AddToCartPage.{closeBrowser, navigateTo, refreshPage, restartDriver}
+import locators.SuccessfulLoginLocators.{errorMessageContainerLocator, loginButtonLocator, passwordLocator, usernameErrorIconLocator, usernameLocator}
+import pages.AddToCartPage.{closeBrowser, elementIsPresent, getText, navigateTo, refreshPage, restartDriver}
 import pages.SuccessfulLoginPage.{browserLaunch, clickOn, inputText}
 import support.DriverManager.driver
 import testdata.SuccessfulLoginData.{inventoryPageUrl, passwordText, userNameStandardText}
@@ -37,17 +37,20 @@ class SuccessfulLoginSteps extends ScalaDsl with EN {
     closeBrowser()
     // println("closed")
   }
-  Then("""I should see a "x" icon next to the username field""") { () =>
-
+  Then("""I should see a "x" icon next to the username and password fields""") { () =>
+    assert(elementIsPresent(usernameErrorIconLocator))
+    //println("username icon is there")
+    assert(elementIsPresent(usernameErrorIconLocator))
+    //println("password icon is there")
   }
-  And("""I should see a "x" icon next to the password field""") { () =>
 
-  }
   And("""I should see an error message "Username is required"""") { () =>
-
+    assert(getText(errorMessageContainerLocator) == "Epic sadface: Username is required")
+    //println("correct error message")
   }
   And("""I should see an error message "Password is required"""") { () =>
-
+    assert(getText(errorMessageContainerLocator) == "Epic sadface: Password is required")
+    //println("correct error message")
   }
   And("""I reopen the browser"""){()=>
     restartDriver()
