@@ -8,5 +8,7 @@ object SuccessfulLoginLocators {
   val passwordLocator: By = By.id("password")
   val loginButtonLocator: By = By.id("login-button")
 //  val lockedOutErrorMessage: By = By.tagName("h3")
-
+  val usernameErrorIconLocator: By = By.cssSelector("div.form_group > #user-name + svg.error_icon")
+  val passwordErrorIconLocator: By = By.cssSelector("div.form_group > #password + svg.error_icon")
+  val errorMessageContainerLocator: By = By.className("error-message-container")
 }
