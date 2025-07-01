@@ -5,10 +5,10 @@ import locators.ViewCartContentsLocators.{cartItemsLocator, continueShoppingLoca
 import pages.AddToCartPage.clickOn
 import pages.ViewCartContentsPage.{addToCartAndStoreItemDetails, getAllCartItems}
 import support.DriverManager.driver
+import support.MapOfItemsAdded.mapOfItemsAdded
 
 class ViewCartContentsSteps extends ScalaDsl with EN {
 
-  var mapOfItemsAdded: List[Map[String, String]] = List.empty
 
   Given("""I add {int} items to the cart""") { (numberOfItems: Int) =>
     mapOfItemsAdded = addToCartAndStoreItemDetails(inventoryItemsLocator, numberOfItems)
