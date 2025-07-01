@@ -18,6 +18,9 @@ trait BasePage {
     driver.get(testUrl)
   }
 
+  def refreshPage(): Unit = {
+    driver.navigate().refresh()
+  }
 
   // Common Actions
 
