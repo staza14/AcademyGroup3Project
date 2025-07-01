@@ -17,4 +17,7 @@ class InitiateCheckoutSteps extends ScalaDsl with EN {
     assert(elementIsPresent(lastNameCheckoutInputLocator))
     assert(elementIsPresent(postcodeCheckoutInputLocator))
   }
+  Then("""I should not navigate to the checkout information page""") { () =>
+    assert(driver.getCurrentUrl == "https://www.saucedemo.com/cart.html")
+  }
 }

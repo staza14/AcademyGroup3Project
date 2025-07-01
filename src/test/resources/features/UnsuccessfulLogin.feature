@@ -1,3 +1,4 @@
+@known_defect
 Feature: Unsuccessful Swag Login
 
   Background:

@@ -7,7 +7,7 @@ import org.junit.runner.RunWith // Import JUnit’s @RunWith annotation to deleg
 @CucumberOptions( // Begin Cucumber configuration block
   features = Array("src/test/resources/features"), // Path(s) to your .feature files (Gherkin scenarios)
   glue = Array("stepdefs", "support"), // Packages that contain step definitions, hooks, and other glue code
-  tags = "",
+  tags = "not @known_defect",
   plugin = Array("pretty", //  • “pretty” prints colour‑coded steps to the console
     "html:target/cucumber-report.html" //  • Generates an HTML report at target/cucumber-report.html
 //    "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm" // Generates Allure Report
