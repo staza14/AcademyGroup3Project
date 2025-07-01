@@ -2,7 +2,7 @@ package stepdefs
 
 import io.cucumber.scala.{EN, ScalaDsl}
 import locators.SuccessfulLoginLocators.{loginButtonLocator, passwordLocator, usernameLocator}
-import pages.AddToCartPage.refreshPage
+import pages.AddToCartPage.{closeBrowser, refreshPage}
 import pages.SuccessfulLoginPage.{browserLaunch, clickOn, inputText}
 import support.DriverManager.driver
 import testdata.SuccessfulLoginData.{passwordText, userNameStandardText}
@@ -34,7 +34,7 @@ class SuccessfulLoginSteps extends ScalaDsl with EN {
     refreshPage()
   }
   When("""I close the browser completely""") { () =>
-
+    closeBrowser()
   }
   Then("""I should see a "x" icon next to the username field""") { () =>
 
@@ -49,7 +49,7 @@ class SuccessfulLoginSteps extends ScalaDsl with EN {
 
   }
   And("""I reopen the browser"""){()=>
-
+    browserLaunch()
   }
   And("""I try to access the product listings page"""){()=>
 

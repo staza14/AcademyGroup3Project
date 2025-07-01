@@ -26,6 +26,10 @@ trait BasePage {
     driver.quit()
   }
 
+  def navigateTo(url: String): Unit = {
+    driver.get(url)
+  }
+
   // Common Actions
 
   def inputText(selector: By, text: String): Unit = {
