@@ -22,6 +22,10 @@ trait BasePage {
     driver.navigate().refresh()
   }
 
+  def closeBrowser(): Unit = {
+    driver.quit()
+  }
+
   // Common Actions
 
   def inputText(selector: By, text: String): Unit = {
