@@ -8,5 +8,6 @@ Feature: Logout Functionality
 
   Scenario: Successful logout
     When user clicks on the menu button
-    And user selects Logout and user redirect login page
+    And  user selects Logout
+
 

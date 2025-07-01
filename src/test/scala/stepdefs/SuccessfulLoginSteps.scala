@@ -24,7 +24,7 @@ class SuccessfulLoginSteps extends ScalaDsl with EN {
   When("""I click on Login""") { () =>
     // Code
     clickOn(loginButtonLocator)
-    Thread.sleep(50000)
+
 
   }
 

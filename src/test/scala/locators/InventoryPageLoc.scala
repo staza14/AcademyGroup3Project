@@ -6,12 +6,12 @@ object InventoryPageLoc {
 
 
 
-  val gridLayout:By = By.className("inventory_list")
+  val inventrypage:By = By.className("inventory_list")
   val productItem: By = By.className("inventory_item")
 
   val Itemnames:By=By.className("inventory_item_name")
   val Itemprice: By = By.className("inventory_item_price")
-  val images:By = By.className("inventory_item_price")
+  val images:By = By.className("inventory_item_img")
 
   val backpackname: By = By.id("item_4_title_link")
   val tshirtname: By = By.id("item_1_title_link")

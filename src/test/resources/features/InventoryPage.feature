@@ -7,8 +7,12 @@ Feature: Inventory page displays product information and footer correctly
     And I have entered the correct username and password.
     And I click on Login
 
-  Scenario: Inventory page displays products in grid layout with all required details
-    Given User should be see the all product display grid layout
-    When all products should be displayed with images, names, and prices
-    Then the footer should be see contain links to social media
-    And User should see the text "2025 Sauce Labs All Rights of Service Privacy Policy in the footer
+  Scenario: Inventory page displays product with all required details
+    Given user is on inventory page
+    Then all products should be displayed with images, names, and prices
+
+
+
+  Scenario: User can see footer containing links to social media and text
+    When user sees links to social media in the footer
+    Then User should see the text 2025 Sauce Labs All Rights of Service Privacy Policy in the footer

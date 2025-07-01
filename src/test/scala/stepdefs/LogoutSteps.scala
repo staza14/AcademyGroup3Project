@@ -12,12 +12,8 @@ object LogoutSteps extends ScalaDsl with EN  {
     burgerMenuButton()
 
   }
-  And("""user selects Logout and user redirect login page""" ) { () =>
+  And("""user selects Logout""" ) { () =>
     logout()
-
-
-
   }
-
 
 }
