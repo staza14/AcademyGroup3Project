@@ -1,5 +1,6 @@
 package pages
 
+import org.openqa.selenium.chrome.{ChromeDriver, ChromeOptions}
 import org.openqa.selenium.support.ui.{ExpectedConditions, Select, WebDriverWait}
 import org.openqa.selenium.{By, JavascriptExecutor, WebDriver, WebElement}
 import support.DriverManager
@@ -28,6 +29,15 @@ trait BasePage {
 
   def navigateTo(url: String): Unit = {
     driver.get(url)
+  }
+
+  def restartDriver(): Unit = {
+    val options = new ChromeOptions()
+    options.addArguments("--headless=new") // stops chrome opening
+    options.addArguments("--guest") // stops password pop up
+    DriverManager.driver = new ChromeDriver(options)  // assign to global driver
+    DriverManager.driver.manage().window().maximize()
+    DriverManager.driver.get(ConfigReader.get("base.url"))
   }
 
   // Common Actions

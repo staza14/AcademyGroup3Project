@@ -2,10 +2,10 @@ package stepdefs
 
 import io.cucumber.scala.{EN, ScalaDsl}
 import locators.SuccessfulLoginLocators.{loginButtonLocator, passwordLocator, usernameLocator}
-import pages.AddToCartPage.{closeBrowser, refreshPage}
+import pages.AddToCartPage.{closeBrowser, navigateTo, refreshPage, restartDriver}
 import pages.SuccessfulLoginPage.{browserLaunch, clickOn, inputText}
 import support.DriverManager.driver
-import testdata.SuccessfulLoginData.{passwordText, userNameStandardText}
+import testdata.SuccessfulLoginData.{inventoryPageUrl, passwordText, userNameStandardText}
 
 class SuccessfulLoginSteps extends ScalaDsl with EN {
 
@@ -35,6 +35,7 @@ class SuccessfulLoginSteps extends ScalaDsl with EN {
   }
   When("""I close the browser completely""") { () =>
     closeBrowser()
+    // println("closed")
   }
   Then("""I should see a "x" icon next to the username field""") { () =>
 
@@ -49,12 +50,14 @@ class SuccessfulLoginSteps extends ScalaDsl with EN {
 
   }
   And("""I reopen the browser"""){()=>
-    browserLaunch()
+    restartDriver()
+    // println("reopened")
   }
   And("""I try to access the product listings page"""){()=>
-
+    navigateTo(inventoryPageUrl)
   }
   Then("""I should be redirected to the login page"""){()=>
-
+    assert(driver.getCurrentUrl != "https://www.saucedemo.com/inventory.html")
+    // println("You are not on product inventory page")
   }
 }
