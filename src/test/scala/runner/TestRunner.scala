@@ -10,7 +10,7 @@ import org.junit.runner.RunWith // Import JUnit’s @RunWith annotation to deleg
   tags = "not @known_defect",
   plugin = Array("pretty", //  • “pretty” prints colour‑coded steps to the console
     "html:target/cucumber-report.html" //  • Generates an HTML report at target/cucumber-report.html
-//    "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm" // Generates Allure Report
+    //    "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm" // Generates Allure Report
   ),
   monochrome = true // Strips ANSI colours from console output for easier reading in plain terminals
 ) // End of @CucumberOptions block

@@ -24,6 +24,7 @@ class SuccessfulLoginSteps extends ScalaDsl with EN {
     // Code
     clickOn(loginButtonLocator)
 
+
   }
 
 

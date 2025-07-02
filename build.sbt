@@ -17,3 +17,4 @@ libraryDependencies ++= Seq(
   "net.java.dev.jna" % "jna" % "5.17.0"
 )
 
+
