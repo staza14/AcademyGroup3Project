@@ -4,7 +4,7 @@ Feature: Complete Purchase
     Given I am on the login page
     And I have entered the correct username and password.
     And I click on Login
-    And I add 2 items to the cart
+    And I add 6 items to the cart
     And I click on the cart icon
     And I click the "Checkout" button
     And I fill in the First Name field
