@@ -3,7 +3,6 @@ package stepdefs
 import io.cucumber.scala.{EN, ScalaDsl}
 import locators.SuccessfulLoginLocators.{loginButtonLocator, passwordLocator, usernameLocator}
 import pages.SuccessfulLoginPage.{browserLaunch, clickOn, inputText}
-import sbt.testing.Task
 import support.DriverManager.driver
 import testdata.SuccessfulLoginData.{passwordText, userNameStandardText}
 

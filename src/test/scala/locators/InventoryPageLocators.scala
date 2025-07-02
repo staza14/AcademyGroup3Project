@@ -2,7 +2,7 @@ package locators
 import org.openqa.selenium.{By, WebElement}
 
 
-object InventoryPageLoc {
+object InventoryPageLocators {
 
 
 

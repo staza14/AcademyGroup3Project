@@ -1,4 +1,3 @@
-@T3_8
 Feature: Inventory page displays product information and footer correctly
 
 
@@ -14,5 +13,5 @@ Feature: Inventory page displays product information and footer correctly
 
 
   Scenario: User can see footer containing links to social media and text
-    When user sees links to social media in the footer
+    Given user is on inventory page
     Then User should see the text 2025 Sauce Labs All Rights of Service Privacy Policy in the footer

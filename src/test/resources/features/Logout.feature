@@ -9,5 +9,7 @@ Feature: Logout Functionality
   Scenario: Successful logout
     When user clicks on the menu button
     And  user selects Logout
+    And I try to access the product listings page
+    Then I should be redirected to the login page
 
 

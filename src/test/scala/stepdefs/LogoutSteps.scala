@@ -2,7 +2,7 @@ package stepdefs
 
 import io.cucumber.scala.{EN, ScalaDsl}
 import locators.LogoutLocators.{burgermenu, logoutclick}
-import pages.LogoutPase.{burgerMenuButton, clickOn, logout}
+import pages.LogoutPage.{burgerMenuButton, clickOn, logout}
 
 object LogoutSteps extends ScalaDsl with EN  {
 

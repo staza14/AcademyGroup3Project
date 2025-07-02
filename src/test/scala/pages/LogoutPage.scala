@@ -3,12 +3,11 @@ package pages
 import locators.LogoutLocators.{burgermenu, logoutclick}
 import org.openqa.selenium.{By, JavascriptExecutor}
 
-object LogoutPase extends BasePage {
+object LogoutPage extends BasePage {
 
 
   def burgerMenuButton(): Unit = {
     clickOn(burgermenu)
-    println(s" click on ")
   }
 
   def logout(): Unit = {
@@ -16,10 +15,6 @@ object LogoutPase extends BasePage {
     if (element.isDisplayed && element.isEnabled) {
       val jsExecutor = driver.asInstanceOf[JavascriptExecutor]
       jsExecutor.executeScript("arguments[0].click();", element)
-      println("Clicked logout with JavaScript")
-    } else {
-      println("Logout link is not interactable")
     }
-
   }
 }
