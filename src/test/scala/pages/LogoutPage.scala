@@ -11,10 +11,12 @@ object LogoutPage extends BasePage {
   }
 
   def logout(): Unit = {
-    val element = driver.findElement(logoutclick)
-    if (element.isDisplayed && element.isEnabled) {
-      val jsExecutor = driver.asInstanceOf[JavascriptExecutor]
-      jsExecutor.executeScript("arguments[0].click();", element)
-    }
+//    val element = driver.findElement(logoutclick)
+//    if (element.isDisplayed && element.isEnabled) {
+//      val jsExecutor = driver.asInstanceOf[JavascriptExecutor]
+//      jsExecutor.executeScript("arguments[0].click();", element)
+//      println("I clicked!")
+//    }
+    waitUntilClickable(logoutclick).click()
   }
 }

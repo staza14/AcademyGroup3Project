@@ -1,7 +1,7 @@
 package stepdefs
 
 import io.cucumber.scala.{EN, ScalaDsl}
-import pages.InventoryPage.{allProductsHaveDetails, footerContainsCorrectText, footersocial, inventoryPageIsDisplayed}
+import pages.InventoryPage.{allProductsHaveDetails, footerContainsCorrectText}
 import support.DriverManager.driver
 
 class InventorySteps extends ScalaDsl with EN {

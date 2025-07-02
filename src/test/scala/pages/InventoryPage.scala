@@ -1,7 +1,6 @@
 package pages
 
 import locators.InventoryPageLocators
-import locators.InventoryPageLocators.inventrypage
 
 import scala.jdk.CollectionConverters.CollectionHasAsScala
 
