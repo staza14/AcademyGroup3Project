@@ -1,0 +1,19 @@
+package stepdefs
+
+import io.cucumber.scala.{EN, ScalaDsl}
+import locators.LogoutLocators.{burgermenu, logoutclick}
+import pages.LogoutPage.{burgerMenuButton, clickOn, logout}
+
+object LogoutSteps extends ScalaDsl with EN  {
+
+
+
+  When("""user clicks on the menu button""") { () =>
+    burgerMenuButton()
+
+  }
+  And("""user selects Logout""" ) { () =>
+    logout()
+  }
+
+}
